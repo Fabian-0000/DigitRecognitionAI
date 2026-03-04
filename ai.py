@@ -45,17 +45,12 @@ def evaluate(image: Image):
     cropped_img = image.convert("L").crop(rect)
     scaled_img = cropped_img.resize((28, 28), Image.Resampling.LANCZOS)
 
-    # Load trained model
     model = tf.keras.models.load_model("digit_model.keras")
 
-    # Load image
     img_array = tfimage.img_to_array(scaled_img)
     img_array = img_array / 255.0
     img_array = np.expand_dims(img_array, axis=0)
 
-    # Predict
     prediction = model.predict(img_array)
-    digit = np.argmax(prediction)
-    prob = np.max(prediction)
 
     return prediction

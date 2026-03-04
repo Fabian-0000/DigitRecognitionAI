@@ -13,7 +13,6 @@ class UI:
         self.root.title("Handwritten Digit Recognition AI")
         self.root.geometry("1000x700")
 
-        # Set up menu bar (like Notepad)
         self.menu_bar = tk.Menu(root)
         root.config(menu=self.menu_bar)
 
@@ -22,16 +21,13 @@ class UI:
         self.menu_bar.add_cascade(label="Evaluate", command=self.show_result)
         self.menu_bar.add_cascade(label="Exit", command=root.quit)
 
-        # Canvas
         self.canvas = tk.Canvas(root, bg="white", cursor="crosshair", highlightthickness=0)
         self.canvas.pack(fill="both", expand=True)
 
-        # Drawing variables
         self.last_x = None
         self.last_y = None
         self.loaded_image = None
 
-        # Mouse bindings for drawing
         self.canvas.bind("<Button-1>", self.start_draw)
         self.canvas.bind("<B1-Motion>", self.draw)
 
@@ -90,9 +86,9 @@ class UI:
             messagebox.showerror("Error", "Nothing drawn")
 
 if __name__ == "__main__":
-    # Make the process DPI aware
+    # Scale the UI so it doesnt look blurry 
     try:
-        ctypes.windll.shcore.SetProcessDpiAwareness(1)  # 1 = SYSTEM_AWARE
+        ctypes.windll.shcore.SetProcessDpiAwareness(1)
     except Exception:
         pass
 
