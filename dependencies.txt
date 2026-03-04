@@ -1,5 +1,4 @@
-tkinter
-PIL
-matplotlib
-numpy
-tensorflow
+Pillow==9.5.0
+matplotlib==3.10.0
+numpy==2.2.3
+tensorflow==2.20.0
