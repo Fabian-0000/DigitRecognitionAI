@@ -1,7 +1,9 @@
-from PIL import Image, ImageOps
+from PIL import Image
 import numpy as np
 from tensorflow.keras.preprocessing import image as tfimage
 import tensorflow as tf
+
+BORDER = 5
 
 def get_rect(image: Image):
     pixels = image.load()
@@ -10,8 +12,8 @@ def get_rect(image: Image):
     rx1, ry1, rx2, ry2 = w, h, 0, 0
 
     # Find bounding box of non-white pixels
-    for y in range(h):
-        for x in range(w):
+    for y in range(BORDER, h - BORDER):
+        for x in range(BORDER, w - BORDER):
             r, g, b = pixels[x, y][:3]
             if (r, g, b) != (255, 255, 255):
                 rx1 = min(rx1, x)
