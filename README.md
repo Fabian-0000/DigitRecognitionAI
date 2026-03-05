@@ -23,4 +23,3 @@ The ```main.py``` contains a GUI class, which calls the AI in ```ai.py```. ```tr
 
 ![Funny Gif](https://media1.tenor.com/m/S2wo3JKirgAAAAAd/know-what-else-is-massive-massive.gif)
 ![Funny Gif](https://media.tenor.com/A-ozELwp694AAAAM/thumbs-thumbs-up-kid.gif)
-![Funny Gif](https://media1.tenor.com/m/WSnMZt-dXKUAAAAd/programming-programando.gif)
